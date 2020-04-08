@@ -1,0 +1,28 @@
+<!-- Основной шаблон -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/shim'  %>
+  </head>
+  <body>
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <!-- Вывод флеша -->
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+
+      <%= yield %>
+
+      <!-- Показ отладки только в окружении разработки -->
+      <%= debug(params) if Rails.env.development? %> 
+    </div>
+    <%= render 'layouts/footer' %>
+  </body>
+</html>
