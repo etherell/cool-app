@@ -8,7 +8,7 @@ gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 # Use sqlite3 as the database for Active Record
 gem 'bootstrap-sass'
 # Use Puma as the app server
-gem 'puma', '~> 4.1'
+gem 'puma', '~> 4.3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 gem 'uglifier'
@@ -56,7 +56,7 @@ end
 group :production do
   gem 'pg', '0.20.0'
   gem 'rails_12factor'
-  gem 'puma', '~> 4.1'
+  gem 'puma', '~> 4.3'
 end
 
 
